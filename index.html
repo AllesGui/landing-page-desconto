@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pare de pagar preço cheio. Entre no nosso grupo VIP de promoções!">
+    <title>Olha o Desconto - Grupo VIP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B6B6B;
+            --primary: #FFD400;
+            /* Yellow */
+            --primary-grad-1: #FFE72D;
+            --primary-grad-2: #FFC900;
+            --green: #60B066;
+            --alert-bg: #F5F5F7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            max-width: 450px;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(180deg, var(--primary-grad-1) 0%, var(--primary-grad-2) 100%);
+            color: var(--text-dark);
+            font-weight: 800;
+            font-size: 22px;
+            padding: 20px 45px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(255, 201, 0, 0.4);
+            transition: all 0.2s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 201, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Lado a Lado (Content Split) */
+        .content-split {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 40px;
+        }
+
+        .left-col {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .phone-img {
+            max-width: 380px;
+            width: 100%;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+        }
+
+        .right-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Lista de Benefícios */
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .check-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--green);
+            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .check-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* Alert Box */
+        .alert-box {
+            background-color: var(--alert-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 35px;
+        }
+
+        .alert-box strong {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .alert-box span {
+            font-size: 18px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .btn-left {
+            max-width: 100%;
+        }
+
+        /* Footer */
+        .footer-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .check-small {
+            color: var(--green);
+            font-size: 18px;
+        }
+
+        /* Media Queries - Mobile */
+        @media (max-width: 900px) {
+            .content-split {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .left-col {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .benefits-list li {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 18px 20px;
+            }
+
+            .benefits-list li {
+                font-size: 18px;
+            }
+
+            .alert-box strong {
+                font-size: 20px;
+            }
+
+            .phone-img {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <!-- Coloque a imagem do logo aqui -->
+            <img src="logo.png" alt="Olha o Desconto" class="logo"
+                onerror="this.src='https://placehold.co/600x300/e0e0e0/555?text=LOGO+AQUI'">
+
+            <h1>PARE DE PAGAR<br>PREÇO CHEIO</h1>
+            <p class="subtitle">Receba cupons e ofertas antes de todo mundo</p>
+
+            <a href="https://chat.whatsapp.com/JMMJSaFmA8V08UWhDQ3D8K" target="_blank" class="btn">ENTRAR NO GRUPO
+                AGORA</a>
+        </div>
+
+        <!-- DOIS LADOS -->
+        <div class="content-split">
+            <!-- TELA DO CELULAR -->
+            <div class="left-col">
+                <!-- Coloque a imagem do celular aqui -->
+                <img src="celular.png" alt="Grupo VIP no WhatsApp" class="phone-img"
+                    onerror="this.src='https://placehold.co/400x800/1e1e1e/fff?text=CELULAR+AQUI'">
+            </div>
+
+            <!-- BENEFÍCIOS E ALERTA -->
+            <div class="right-col">
+                <ul class="benefits-list">
+                    <li>
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+                        </div>
+                        Descontos reais
+                    </li>
+                    <li>
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+                        </div>
+                        Cupons que quase ninguém vê
+                    </li>
+                    <li>
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+                        </div>
+                        Ofertas todos os dias
+                    </li>
+                </ul>
+
+                <div class="alert-box">
+                    <strong>Essas promoções<br>duram poucos minutos</strong>
+                    <span>Quem entra primeiro pega</span>
+                </div>
+
+                <a href="https://chat.whatsapp.com/JMMJSaFmA8V08UWhDQ3D8K" target="_blank" class="btn btn-left">CLIQUE E
+                    ENTRE GRÁTIS</a>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div class="footer-proof">
+            <span class="check-small">✅</span> +100 pessoas já estão aproveitando • Grupo gratuito
+        </div>
+    </div>
+
+</body>
+
+</html>
